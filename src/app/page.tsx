@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
+import { ProjectShowcase } from "@/components/ProjectShowcase";
 import { ScrollEffects } from "@/components/ScrollEffects";
 import { TypewriterHeading } from "@/components/TypewriterHeading";
 import { experience, metrics, profile, projects, skills, workModes } from "@/data/portfolio";
@@ -129,46 +130,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="featured-project" data-reveal="lift">
-            <div>
-              <p className="eyebrow">Featured system</p>
-              <h3>Ironlog</h3>
-              <p>
-                A fitness and workout tracking application designed for high-contrast, one-thumb interactions
-                during active training. The system combines an Expo React Native frontend, Python FastAPI backend,
-                and MongoDB persistence.
-              </p>
-            </div>
-            <ul className="project-points">
-              <li>Dark performance-focused mobile UI</li>
-              <li>Persistent rest timer and workout logging flows</li>
-              <li>Backend and frontend split for scalable iteration</li>
-            </ul>
-          </div>
-
-          <div className="project-grid">
-            {projects.map((project) => (
-              <article className={`project-card accent-${project.accent}`} key={project.title} data-reveal="card">
-                <div className="project-meta">
-                  <span>{project.category}</span>
-                  {project.link ? (
-                    <a href={project.link} target="_blank" rel="noreferrer">
-                      {project.linkLabel}
-                    </a>
-                  ) : (
-                    <span>{project.linkLabel}</span>
-                  )}
-                </div>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <div className="tags">
-                  {project.tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
+          <ProjectShowcase projects={projects} />
         </section>
 
         <section className="section experience-section" id="work" aria-labelledby="work-title" data-reveal="float">
