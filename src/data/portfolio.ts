@@ -42,6 +42,16 @@ export const workModes = [
 
 export const projects = [
   {
+    category: "Finance app",
+    linkLabel: "GitHub",
+    link: "https://github.com/heysinghaaa/ledgerly-finance-tracker",
+    title: "Ledgerly",
+    description:
+      "Personal invoice and expense tracker with dashboard metrics, editable invoice builder, local persistence, and print-ready preview.",
+    tags: ["Next.js", "TypeScript", "Finance"],
+    accent: "green"
+  },
+  {
     category: "Python 3D",
     linkLabel: "GitHub",
     link: "https://github.com/heysinghaaa/panda3d-scene-explorer",
