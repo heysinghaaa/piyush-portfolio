@@ -42,6 +42,16 @@ export const workModes = [
 
 export const projects = [
   {
+    category: "Career intelligence",
+    linkLabel: "GitHub",
+    link: "https://github.com/heysinghaaa/jobproof-career-intelligence",
+    title: "JobProof",
+    description:
+      "Explainable job-application proof tool with Python FastAPI analysis, project matching, scam signals, and optional user-owned AI mode.",
+    tags: ["FastAPI", "Next.js", "AI-ready"],
+    accent: "blue"
+  },
+  {
     category: "Finance app",
     linkLabel: "GitHub",
     link: "https://github.com/heysinghaaa/ledgerly-finance-tracker",
