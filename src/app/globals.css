@@ -167,15 +167,19 @@ h3 {
 }
 
 .brand-mark {
-  display: grid;
   width: 40px;
   height: 40px;
   flex: 0 0 auto;
-  place-items: center;
-  color: #07100f;
-  background: var(--teal);
-  border-radius: 8px;
-  box-shadow: 0 0 26px rgba(69, 224, 196, 0.28);
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 26px rgba(255, 255, 255, 0.16);
+}
+
+.brand-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .nav-links {

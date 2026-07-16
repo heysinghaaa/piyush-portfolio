@@ -18,7 +18,16 @@ export default function Home() {
       </div>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Piyush Singh home">
-          <span className="brand-mark">PS</span>
+          <span className="brand-mark" aria-hidden="true">
+            <Image
+              className="brand-logo"
+              src="/android-chrome-512x512.png"
+              alt=""
+              width={40}
+              height={40}
+              priority
+            />
+          </span>
           <span>{profile.name}</span>
         </a>
         <nav className="nav-links" aria-label="Primary navigation">
