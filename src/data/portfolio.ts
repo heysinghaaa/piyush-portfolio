@@ -1,6 +1,6 @@
 export const profile = {
   name: "Piyush Singh",
-  location: "Jaipur, India",
+  location: "Hyderabad, India",
   email: "piyush32013@gmail.com",
   phone: "+91 94618 78928",
   github: "https://github.com/heysinghaaa",

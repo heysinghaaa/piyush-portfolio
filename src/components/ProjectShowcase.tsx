@@ -1,6 +1,4 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
+import { ResponsiveGrid } from "@/components/portfolio-ui";
 
 type Project = {
   category: string;
@@ -17,108 +15,76 @@ type ProjectShowcaseProps = {
 };
 
 export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const cardsRef = useRef<Array<HTMLElement | null>>([]);
-  const activeProject = projects[activeIndex] ?? projects[0];
-  const progress = projects.length > 1 ? ((activeIndex + 1) / projects.length) * 100 : 100;
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntry = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if (visibleEntry?.target instanceof HTMLElement) {
-          const nextIndex = Number(visibleEntry.target.dataset.showcaseIndex ?? 0);
-          setActiveIndex(nextIndex);
-        }
-      },
-      {
-        rootMargin: "-34% 0px -34% 0px",
-        threshold: [0.35, 0.55, 0.75],
-      },
-    );
-
-    cardsRef.current.forEach((card) => {
-      if (card) {
-        observer.observe(card);
-      }
-    });
-
-    return () => observer.disconnect();
-  }, [projects.length]);
+  const featuredProjects = projects.slice(0, 2);
+  const remainingProjects = projects.slice(2);
 
   return (
-    <div className="venture-showcase">
-      <div className="showcase-copy">
-        <div className="showcase-copy-card">
-          <span className={`showcase-accent accent-${activeProject.accent}`} />
-          <p className="eyebrow">{activeProject.category}</p>
-          <h3>{activeProject.title}</h3>
-          <p>{activeProject.description}</p>
-          <ul>
-            {activeProject.tags.map((tag) => (
-              <li key={tag}>{tag} proof in a focused product build.</li>
-            ))}
-          </ul>
-          <div className="tags">
-            {activeProject.tags.map((tag) => (
-              <span key={tag}>{tag}</span>
-            ))}
-          </div>
-          <a className="showcase-link" href={activeProject.link} target="_blank" rel="noreferrer">
-            {activeProject.linkLabel}
-          </a>
-        </div>
-      </div>
-
-      <div className="showcase-rail" aria-hidden="true">
-        <span className="showcase-rail-dot">{String(activeIndex + 1).padStart(2, "0")}</span>
-        <div className="showcase-rail-track">
-          <span style={{ height: `${progress}%` }} />
-        </div>
-      </div>
-
-      <div className="showcase-visuals">
-        {projects.map((project, index) => (
-          <article
-            className={`showcase-visual accent-${project.accent} ${activeIndex === index ? "is-active" : ""}`}
-            data-showcase-index={index}
+    <div className="project-showcase">
+      <ResponsiveGrid className="featured-projects" columns={2}>
+        {featuredProjects.map((project, index) => (
+          <a
+            className={`project-feature accent-${project.accent}`}
+            data-cursor-label="View"
+            data-reveal="card"
+            href={project.link}
             key={project.title}
-            ref={(node) => {
-              cardsRef.current[index] = node;
-            }}
+            rel="noreferrer"
+            target="_blank"
           >
-            <div className="showcase-visual-top">
-              <span>{project.category}</span>
-              <strong>{String(index + 1).padStart(2, "0")}</strong>
+            <div className="project-feature-top">
+              <span>{String(index + 1).padStart(2, "0")} · {project.category}</span>
+              <span>View project ↗</span>
             </div>
-            <div className="showcase-art" aria-hidden="true">
-              <div className="mock-phone">
-                <span />
-                <i />
-                <b />
-              </div>
-              <div className="mock-browser">
-                <div className="mock-browser-bar">
-                  <span />
-                  <span />
-                  <span />
-                </div>
-                <div className="mock-browser-body">
-                  <strong>{project.title}</strong>
-                  <span />
-                  <span />
-                  <span />
-                </div>
-              </div>
-            </div>
-            <div className="showcase-visual-copy">
-              <h4>{project.title}</h4>
+            <div className="project-feature-copy">
+              <h3>{project.title}</h3>
               <p>{project.description}</p>
+              <div className="project-tags" aria-label="Technologies">
+                {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+              </div>
             </div>
-          </article>
+            <div className="project-preview" aria-hidden="true">
+              <div className="preview-window">
+                <div className="preview-bar"><i /><i /><i /><span>{project.title}</span></div>
+                <div className="preview-body">
+                  <div className="preview-rail"><i /><i /><i /><i /></div>
+                  <div className="preview-main">
+                    <span className="preview-chip">{project.category}</span>
+                    <strong>{index === 0 ? "Proof before application." : "Money, made legible."}</strong>
+                    <i /><i /><i />
+                    <b />
+                  </div>
+                </div>
+              </div>
+              <div className="preview-orbit" />
+            </div>
+          </a>
+        ))}
+      </ResponsiveGrid>
+
+      <div className="project-list">
+        {remainingProjects.map((project, index) => (
+          <a
+            className={`project-row accent-${project.accent}`}
+            data-cursor-label="View"
+            data-reveal="card"
+            href={project.link}
+            key={project.title}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <span className="project-index">{String(index + 3).padStart(2, "0")}</span>
+            <div className="project-heading">
+              <span>{project.category}</span>
+              <h3>{project.title}</h3>
+            </div>
+            <p>{project.description}</p>
+            <div className="project-tags" aria-label="Technologies">
+              {project.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+            <span className="project-arrow" aria-hidden="true">↗</span>
+          </a>
         ))}
       </div>
     </div>
