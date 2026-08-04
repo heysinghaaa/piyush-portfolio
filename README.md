@@ -1,6 +1,10 @@
 # Piyush Singh — Portfolio
 
-Personal portfolio site for **Piyush Singh**, a frontend developer and AI training contributor based in Jaipur, India. Built with Next.js and React.
+Personal portfolio site for **Piyush Singh**, a frontend software engineer based in Hyderabad, India. Built with Next.js and React.
+
+## Live Website
+
+[Open Piyush Singh's portfolio](https://piyush-portfolio-sepia.vercel.app/)
 
 ## Stack
 
