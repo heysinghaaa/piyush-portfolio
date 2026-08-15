@@ -43,8 +43,8 @@ export const workModes = [
 export const projects = [
   {
     category: "Career intelligence",
-    linkLabel: "GitHub",
-    link: "https://github.com/heysinghaaa/jobproof-career-intelligence",
+    linkLabel: "Live site",
+    link: "https://jobproofintelligence.vercel.app/",
     title: "JobProof",
     description:
       "Explainable job-application proof tool with Python FastAPI analysis, project matching, scam signals, and optional user-owned AI mode.",
@@ -53,13 +53,23 @@ export const projects = [
   },
   {
     category: "Finance app",
-    linkLabel: "GitHub",
-    link: "https://github.com/heysinghaaa/ledgerly-finance-tracker",
+    linkLabel: "Live site",
+    link: "https://ledgerlyhq.vercel.app/",
     title: "Ledgerly",
     description:
       "Personal invoice and expense tracker with dashboard metrics, editable invoice builder, local persistence, and print-ready preview.",
     tags: ["Next.js", "TypeScript", "Finance"],
     accent: "green"
+  },
+  {
+    category: "Business website",
+    linkLabel: "Live site",
+    link: "https://plainlyfound.com/",
+    title: "Plainly Found",
+    description:
+      "WordPress business website built with HTML and PHP, with responsive presentation and maintainable content publishing.",
+    tags: ["WordPress", "HTML", "PHP"],
+    accent: "violet"
   },
   {
     category: "Python 3D",

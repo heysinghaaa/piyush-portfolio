@@ -23,8 +23,9 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
       <ResponsiveGrid className="featured-projects" columns={2}>
         {featuredProjects.map((project, index) => (
           <a
+            aria-label={`${project.title} — ${project.linkLabel}`}
             className={`project-feature accent-${project.accent}`}
-            data-cursor-label="View"
+            data-cursor-label={project.linkLabel}
             data-reveal="card"
             href={project.link}
             key={project.title}
@@ -33,7 +34,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
           >
             <div className="project-feature-top">
               <span>{String(index + 1).padStart(2, "0")} · {project.category}</span>
-              <span>View project ↗</span>
+              <span>{project.linkLabel} ↗</span>
             </div>
             <div className="project-feature-copy">
               <h3>{project.title}</h3>
@@ -64,8 +65,9 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
       <div className="project-list">
         {remainingProjects.map((project, index) => (
           <a
+            aria-label={`${project.title} — ${project.linkLabel}`}
             className={`project-row accent-${project.accent}`}
-            data-cursor-label="View"
+            data-cursor-label={project.linkLabel}
             data-reveal="card"
             href={project.link}
             key={project.title}
@@ -74,7 +76,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
           >
             <span className="project-index">{String(index + 3).padStart(2, "0")}</span>
             <div className="project-heading">
-              <span>{project.category}</span>
+              <span>{project.category} · {project.linkLabel}</span>
               <h3>{project.title}</h3>
             </div>
             <p>{project.description}</p>
