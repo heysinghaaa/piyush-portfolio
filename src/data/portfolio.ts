@@ -53,6 +53,17 @@ export const projects = [
     previewText: "Every state after the happy path."
   },
   {
+    category: "Finance app",
+    linkLabel: "Live site",
+    link: "https://ledgerlyhq.vercel.app/",
+    title: "Ledgerly",
+    description:
+      "Personal invoice and expense tracker with dashboard metrics, editable invoice builder, local persistence, and print-ready preview.",
+    tags: ["Next.js", "TypeScript", "Finance"],
+    accent: "green",
+    previewText: "Money, made legible."
+  },
+  {
     category: "Career intelligence",
     linkLabel: "Live site",
     link: "https://jobproofintelligence.vercel.app/",
@@ -62,16 +73,6 @@ export const projects = [
     tags: ["FastAPI", "Next.js", "AI-ready"],
     accent: "blue",
     previewText: "Proof before application."
-  },
-  {
-    category: "Finance app",
-    linkLabel: "Live site",
-    link: "https://ledgerlyhq.vercel.app/",
-    title: "Ledgerly",
-    description:
-      "Personal invoice and expense tracker with dashboard metrics, editable invoice builder, local persistence, and print-ready preview.",
-    tags: ["Next.js", "TypeScript", "Finance"],
-    accent: "green"
   },
   {
     category: "Business website",
