@@ -8,6 +8,7 @@ type Project = {
   description: string;
   tags: string[];
   accent: string;
+  previewText?: string;
 };
 
 type ProjectShowcaseProps = {
@@ -50,7 +51,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
                   <div className="preview-rail"><i /><i /><i /><i /></div>
                   <div className="preview-main">
                     <span className="preview-chip">{project.category}</span>
-                    <strong>{index === 0 ? "Proof before application." : "Money, made legible."}</strong>
+                    <strong>{project.previewText ?? project.description}</strong>
                     <i /><i /><i />
                     <b />
                   </div>

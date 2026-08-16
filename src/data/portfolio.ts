@@ -42,6 +42,17 @@ export const workModes = [
 
 export const projects = [
   {
+    category: "Open-source React registry",
+    linkLabel: "Live docs",
+    link: "https://elsecase.vercel.app/",
+    title: "Elsecase",
+    description:
+      "Installable React workflows for loading, empty, error, offline, data-exploration, and form-recovery states, distributed as editable source through the shadcn CLI.",
+    tags: ["React", "TypeScript", "Accessibility"],
+    accent: "violet",
+    previewText: "Every state after the happy path."
+  },
+  {
     category: "Career intelligence",
     linkLabel: "Live site",
     link: "https://jobproofintelligence.vercel.app/",
@@ -49,7 +60,8 @@ export const projects = [
     description:
       "Explainable job-application proof tool with Python FastAPI analysis, project matching, scam signals, and optional user-owned AI mode.",
     tags: ["FastAPI", "Next.js", "AI-ready"],
-    accent: "blue"
+    accent: "blue",
+    previewText: "Proof before application."
   },
   {
     category: "Finance app",
