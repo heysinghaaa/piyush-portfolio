@@ -42,6 +42,20 @@ export const workModes = [
 
 export const projects = [
   {
+    category: "Local multimodal RAG laboratory",
+    linkLabel: "GitHub",
+    link: "https://github.com/heysinghaaa/RAG-PixelRAG",
+    title: "RAG Vision Lab",
+    description:
+      "Controlled comparison of Docling HybridChunker RAG and screenshot-native PixelRAG, with paired retrieval, evidence inspection, evaluation fixtures, and a shared local Qwen3-VL reader.",
+    tags: ["Next.js", "FastAPI", "Docling", "Qwen3-VL"],
+    accent: "green",
+    image: {
+      src: "/assets/projects/rag-vision-lab.png",
+      alt: "RAG Vision Lab overview showing a controlled Docling RAG and PixelRAG comparison"
+    }
+  },
+  {
     category: "Open-source React registry",
     linkLabel: "Live docs",
     link: "https://elsecase.vercel.app/",

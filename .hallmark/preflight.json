@@ -1,0 +1,10 @@
+{
+  "scanned_at": "2026-08-20",
+  "framework": "Next.js 16 App Router",
+  "styling": "Tailwind CSS 4 plus global CSS tokens",
+  "font_stack": "Existing Arial/Helvetica sans stack",
+  "palette": "Existing dark neutral system with cyan, green, violet, pink, and orange signals",
+  "motion": "Existing CSS transitions and scroll effects; no external motion dependency",
+  "scope": "Additive RAG Vision Lab project entry with a real screenshot",
+  "preserved": ["font stack", "palette", "spacing", "navigation", "page structure"]
+}

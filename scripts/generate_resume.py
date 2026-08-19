@@ -113,6 +113,7 @@ def project(
     stack: str,
     description: str,
     source_url: str | None = None,
+    url_label: str = "Live",
 ):
     source = (
         f' | Source: <link href="{source_url}" color="#1769E0">{source_url}</link>'
@@ -121,7 +122,7 @@ def project(
     )
     return Paragraph(
         f'<b><link href="{url}" color="#1769E0">{name}</link></b> | {stack}'
-        f'<br/><font size="7.6">Live: <link href="{url}" color="#1769E0">{url}</link>{source}</font>'
+        f'<br/><font size="7.6">{url_label}: <link href="{url}" color="#1769E0">{url}</link>{source}</font>'
         f'<br/>{description}',
         project_style,
     )
@@ -241,6 +242,13 @@ def build():
             "Next.js, React, TypeScript, Tailwind CSS, shadcn/ui",
             "Open-source registry of editable workflows for loading, refreshing, empty data, failures, offline behavior, responsive data exploration, validation, autosave, retry, and recovery. Verified with 58 unit/accessibility tests, 28 Playwright checks, Storybook, CI, and clean-install production builds.",
             "https://github.com/heysinghaaa/Elsecase",
+        ),
+        project(
+            "RAG Vision Lab",
+            "https://github.com/heysinghaaa/RAG-PixelRAG",
+            "Next.js, FastAPI, Docling, Qwen3-VL, Ollama",
+            "Local evidence-first laboratory comparing Docling HybridChunker RAG with screenshot-native PixelRAG over shared documents, questions, retrieval depth, and reader settings. Includes paired SSE runs, inspectable chunks and tiles, citations, latency separation, and a 16-case labeled demonstration suite.",
+            url_label="Repository",
         ),
         project(
             "JobProof",

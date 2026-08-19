@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ResponsiveGrid } from "@/components/portfolio-ui";
 
 type Project = {
@@ -9,6 +10,10 @@ type Project = {
   tags: string[];
   accent: string;
   previewText?: string;
+  image?: {
+    src: string;
+    alt: string;
+  };
 };
 
 type ProjectShowcaseProps = {
@@ -44,20 +49,33 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
                 {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
               </div>
             </div>
-            <div className="project-preview" aria-hidden="true">
-              <div className="preview-window">
-                <div className="preview-bar"><i /><i /><i /><span>{project.title}</span></div>
-                <div className="preview-body">
-                  <div className="preview-rail"><i /><i /><i /><i /></div>
-                  <div className="preview-main">
-                    <span className="preview-chip">{project.category}</span>
-                    <strong>{project.previewText ?? project.description}</strong>
-                    <i /><i /><i />
-                    <b />
+            <div className="project-preview">
+              {project.image ? (
+                <figure className="project-screenshot">
+                  <Image
+                    alt={project.image.alt}
+                    height={1000}
+                    src={project.image.src}
+                    width={1440}
+                  />
+                </figure>
+              ) : (
+                <div aria-hidden="true">
+                  <div className="preview-window">
+                    <div className="preview-bar"><i /><i /><i /><span>{project.title}</span></div>
+                    <div className="preview-body">
+                      <div className="preview-rail"><i /><i /><i /><i /></div>
+                      <div className="preview-main">
+                        <span className="preview-chip">{project.category}</span>
+                        <strong>{project.previewText ?? project.description}</strong>
+                        <i /><i /><i />
+                        <b />
+                      </div>
+                    </div>
                   </div>
+                  <div className="preview-orbit" />
                 </div>
-              </div>
-              <div className="preview-orbit" />
+              )}
             </div>
           </a>
         ))}

@@ -1,3 +1,6 @@
+/* Hallmark · additive project showcase · genre: modern-minimal
+ * pre-emit critique: P4 H5 E4 S5 R5 V4 · existing structure and tokens preserved
+ */
 @import "tailwindcss";
 
 @theme inline {
@@ -654,6 +657,33 @@ h2 em {
   min-height: 270px;
   flex: 1;
   margin-top: 44px;
+}
+
+.project-screenshot {
+  position: absolute;
+  right: -5%;
+  bottom: -12%;
+  width: 92%;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(var(--project-accent-rgb), 0.42);
+  border-radius: 16px;
+  background: var(--panel);
+  box-shadow:
+    0 34px 80px rgba(0, 0, 0, 0.54),
+    0 0 58px rgba(var(--project-accent-rgb), 0.09);
+  transform: perspective(900px) rotateX(3deg) rotateY(-6deg) rotateZ(-1deg);
+  transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-screenshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-feature:hover .project-screenshot {
+  transform: perspective(900px) rotateX(0) rotateY(-1deg) rotateZ(0) translateY(-8px);
 }
 
 .preview-window {
@@ -1394,6 +1424,10 @@ h2 em {
   .preview-window {
     width: 104%;
     min-height: 245px;
+  }
+
+  .project-screenshot {
+    width: 104%;
   }
 
   .preview-body {
