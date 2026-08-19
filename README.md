@@ -4,7 +4,7 @@ Personal portfolio site for **Piyush Singh**, a frontend software engineer based
 
 ## Live Website
 
-[Open Piyush Singh's portfolio](https://piyush-portfolio-sepia.vercel.app/)
+[Open Piyush Singh's portfolio](https://heysinghaaa.vercel.app/)
 
 ## Stack
 
