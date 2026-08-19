@@ -64,7 +64,10 @@ export const projects = [
       "Installable React workflows for loading, empty, error, offline, data-exploration, and form-recovery states, distributed as editable source through the shadcn CLI.",
     tags: ["React", "TypeScript", "Accessibility"],
     accent: "violet",
-    previewText: "Every state after the happy path."
+    image: {
+      src: "/assets/projects/elsecase-live.jpg",
+      alt: "Elsecase registry homepage showing AsyncState, ResponsiveDataExplorer, and FormWorkflow"
+    }
   },
   {
     category: "Finance app",
